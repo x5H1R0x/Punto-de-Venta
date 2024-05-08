@@ -97,5 +97,15 @@ namespace SisVentas.Presentacion
             }
             
         }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            Frm_Productos oFrm_Produ = new Frm_Productos();
+            // Asignar valores de usuario a las propiedades de Frm_Productos
+            oFrm_Produ.CodigoUs_pr = nCodigo_us;
+            oFrm_Produ.LoginUs_pr = cLogin_us;
+            oFrm_Produ.NombreUs_pr = cNombre_us;
+            oFrm_Produ.ShowDialog();
+        }
     }
 }
