@@ -27,8 +27,15 @@ namespace SisVentas.Datos
                 command.Parameters.Add("codigo_producto", MySqlDbType.VarChar).Value = codigo;
                 conn.Open();
                 reader = command.ExecuteReader();
-                reader.Read();
-                    
+
+                if (!reader.Read())
+                {
+                    item = new E_SaleItem(0, "", "", 0, 0f);
+                }
+                else
+                {
+                    item = new E_SaleItem(reader.GetInt32(0), codigo, reader.GetString(1), 1, reader.GetFloat(2));
+                }                    
 
                 conn.Close();
 
@@ -40,10 +47,7 @@ namespace SisVentas.Datos
             }
         }
 
-        {
-
-        }
-        public void storeSaleData(BindingList<E_SaleItem> lista)
+        public void storeSaleData(BindingList<E_SaleItem> lista, float totalVenta)
         {
             MySqlDataReader reader;
             MySqlConnection conn = new MySqlConnection();
@@ -70,6 +74,11 @@ namespace SisVentas.Datos
                 foreach (E_SaleItem item in lista)
                 {
                     command.Parameters.Clear();
+                    command.Parameters.Add("idP", MySqlDbType.Int32).Value = item.l_id;
+                    command.Parameters.Add("idV", MySqlDbType.Int32).Value = idVenta;
+                    command.Parameters.Add("can", MySqlDbType.Int32).Value = item.l_cantidad;
+                    command.Parameters.Add("pre", MySqlDbType.Float).Value = item.l_precio;
+                    command.ExecuteNonQuery();
                 }
 
                 conn.Close();
