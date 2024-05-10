@@ -65,6 +65,12 @@
     <Compile Include="Presentacion\Frm_Details.Designer.cs">
       <DependentUpon>Frm_Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Frm_Familias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Frm_Familias.Designer.cs">
+      <DependentUpon>Frm_Familias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,18 @@
     <Compile Include="Presentacion\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Frm_SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Frm_SalesReport.Designer.cs">
+      <DependentUpon>Frm_SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Frm_StoreFront.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Frm_StoreFront.Designer.cs">
+      <DependentUpon>Frm_StoreFront.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Frm_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\Frm_Details.resx">
       <DependentUpon>Frm_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Frm_Familias.resx">
+      <DependentUpon>Frm_Familias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -111,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Frm_SalesReport.resx">
+      <DependentUpon>Frm_SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Frm_StoreFront.resx">
+      <DependentUpon>Frm_StoreFront.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Usuarios.resx">
       <DependentUpon>Frm_Usuarios.cs</DependentUpon>

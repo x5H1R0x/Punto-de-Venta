@@ -30,7 +30,7 @@
         {
             this.dataGridView_Buys = new System.Windows.Forms.DataGridView();
             this.dtp_desde = new System.Windows.Forms.DateTimePicker();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tBox_total = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tBox_tCompras = new System.Windows.Forms.TextBox();
@@ -39,37 +39,37 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button_report = new System.Windows.Forms.Button();
             this.dtp_hasta = new System.Windows.Forms.DateTimePicker();
-			this.label2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Exit = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Sales = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Buys)).BeginInit();
-			this.groupBox1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Sales)).BeginInit();
-			this.SuspendLayout();
-			// 
+            this.SuspendLayout();
+            // 
             // dataGridView_Buys
-			// 
+            // 
             this.dataGridView_Buys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Buys.Location = new System.Drawing.Point(9, 19);
+            this.dataGridView_Buys.Location = new System.Drawing.Point(6, 19);
             this.dataGridView_Buys.Name = "dataGridView_Buys";
-            this.dataGridView_Buys.Size = new System.Drawing.Size(310, 401);
+            this.dataGridView_Buys.Size = new System.Drawing.Size(313, 401);
             this.dataGridView_Buys.TabIndex = 0;
-			// 
+            // 
             // dtp_desde
-			// 
+            // 
             this.dtp_desde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_desde.Location = new System.Drawing.Point(6, 36);
             this.dtp_desde.Name = "dtp_desde";
             this.dtp_desde.Size = new System.Drawing.Size(96, 20);
             this.dtp_desde.TabIndex = 1;
-			// 
-			// groupBox1
-			// 
+            // 
+            // groupBox1
+            // 
             this.groupBox1.Controls.Add(this.tBox_total);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tBox_tCompras);
@@ -78,15 +78,15 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button_report);
             this.groupBox1.Controls.Add(this.dtp_hasta);
-			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtp_desde);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(677, 12);
-			this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(111, 383);
-			this.groupBox1.TabIndex = 2;
-			this.groupBox1.TabStop = false;
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reporte";
             // 
             // tBox_total
@@ -166,16 +166,16 @@
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Hasta";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 20);
-			this.label1.Name = "label1";
+            this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Desde";
-			// 
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Desde";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView_Buys);
@@ -188,7 +188,7 @@
             this.groupBox2.Text = "Compras";
             // 
             // button_Exit
-			// 
+            // 
             this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Exit.Location = new System.Drawing.Point(701, 415);
             this.button_Exit.Name = "button_Exit";
@@ -197,9 +197,9 @@
             this.button_Exit.Text = "Salir";
             this.button_Exit.UseVisualStyleBackColor = true;
             this.button_Exit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_Exit_MouseClick);
-			// 
+            // 
             // groupBox3
-			// 
+            // 
             this.groupBox3.Controls.Add(this.dataGridView_Sales);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(346, 12);
@@ -208,37 +208,36 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ventas";
-			// 
+            // 
             // dataGridView_Sales
-			// 
+            // 
             this.dataGridView_Sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Sales.Location = new System.Drawing.Point(7, 20);
             this.dataGridView_Sales.Name = "dataGridView_Sales";
             this.dataGridView_Sales.Size = new System.Drawing.Size(312, 400);
             this.dataGridView_Sales.TabIndex = 0;
             this.dataGridView_Sales.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_Sales_RowHeaderMouseDoubleClick);
-			// 
-			// Frm_SalesReport
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            // 
+            // Frm_SalesReport
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.dataGridView1);
-			this.Name = "Frm_SalesReport";
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Frm_SalesReport";
             this.Text = "Reporte Compras y Ventas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Buys)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Sales)).EndInit();
-			this.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 
