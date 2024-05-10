@@ -28,24 +28,72 @@ namespace SisVentas.Presentacion
 
         private void button_buscar_Click(object sender, EventArgs e)
         {
-            string id = tBox_Codigo.Text;
+            string codigo = tBox_Codigo.Text;
+            E_SaleItem item;
+            int index = -1;
+            bool found = false;
 
-            if (id == "") return;
+            if (codigo == "") return;
 
-            E_SaleItem item = sqlItem.getStoreItem(id);
+            foreach(E_SaleItem venI in venta)
+            {
+                index++;
+                if(codigo == venI.l_codigo)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                item = venta[index];
+                button_AddtoList.Text = "Actualizar";
+            }
+            else
+            {
+                item = sqlItem.getStoreItem(codigo);
+            }
 
             tBox_Id.Text = item.l_id.ToString();
 			tBox_desc.Text = item.l_desc;
 			tBox_precio.Text = item.l_precio.ToString();
-			numUD_cantidad.Value = 1;
+			numUD_cantidad.Value = item.l_cantidad;
+
         }
 
         private void button_AddtoList_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(tBox_Id.Text);
-            string desc = tBox_desc.Text;
-            float cant = (float)numUD_cantidad.Value;
-            float precio = (float) Convert.ToDecimal(tBox_precio.Text);
+            int index = -1;
+            bool found = false;
+            string cod = tBox_Codigo.Text;
+            int cant = (int)numUD_cantidad.Value;
+            float precio = (float)Convert.ToDecimal(tBox_precio.Text);
+
+            if (cod == "") return;
+
+            foreach (E_SaleItem venI in venta)
+            {
+                index++;
+                if (cod == venI.l_codigo)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                total -= venta[index].l_cantidad * precio;
+                venta[index].l_cantidad = cant;
+                button_AddtoList.Text = "Agregar";
+            }
+            else
+            {
+                int id = Convert.ToInt32(tBox_Id.Text);
+                string desc = tBox_desc.Text;
+                venta.Add(new E_SaleItem(id, cod, desc, cant, precio));
+            }
 
             tBox_Id.Text = "";
             tBox_Codigo.Text = "";
@@ -53,10 +101,8 @@ namespace SisVentas.Presentacion
             numUD_cantidad.Value = 0.0M;
             tBox_precio.Text = "";
 
-
             total += (cant * precio);
-
-            venta.Add(new E_SaleItem(id, desc, cant, precio));
+            
             dataGridView_venta.Refresh();
             tBox_SaleTotal.Text = total.ToString();
 
@@ -64,8 +110,33 @@ namespace SisVentas.Presentacion
 
         private void button_Cerrar_venta_Click(object sender, EventArgs e)
         {
-            //SQL nueva venta, tomar ID del resultado para la sig. talvez total se guarda para no tener que calcular
-            sqlItem.storeSaleData(venta);
+            sqlItem.storeSaleData(venta, total);
+            venta.Clear();
+            total = 0;
+            dataGridView_venta.Refresh();
+            tBox_SaleTotal.Text = total.ToString();
+        }
+
+        private void dataGridView_venta_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int dataRow = dataGridView_venta.Rows[e.RowIndex].Index;
+
+            E_SaleItem item = venta[dataRow];
+
+            DialogResult res = MessageBox.Show("Desea eliminar el producto con codigo: " + item.l_codigo, "Eliminar", MessageBoxButtons.YesNo);
+
+            if(res == DialogResult.Yes)
+            {
+                total -= item.l_cantidad * item.l_precio;
+                tBox_SaleTotal.Text = total.ToString();
+                venta.RemoveAt(dataRow);
+            }
+
+        }
+
+        private void button_Exit_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
         }
     }
 }
