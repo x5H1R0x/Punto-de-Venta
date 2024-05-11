@@ -27,13 +27,34 @@ namespace SisVentas.Presentacion
             float tVentas, tCompras, total;
 
             ventas = report.getVentas(fInicio, fFin);
-            //compras = report.getCompras(fInicio, fFin);
+            compras = report.getCompras(fInicio, fFin);
 
-            tVentas = (float)Convert.ToDouble(ventas.Compute("SUM(totalVenta)", string.Empty));
-            //tCompras = (float)Convert.ToDouble(compras.Compute("SUM(total)", string.Empty));
+            if (ventas != null && ventas.Rows.Count > 0)
+            {
+                tVentas = (float)Convert.ToDouble(ventas.Compute("SUM(total)", string.Empty));
+            }
+            else
+            {
+                tVentas = 0f;
+            }
+            if (compras != null && compras.Rows.Count > 0)
+            {
+                tCompras = (float)Convert.ToDouble(compras.Compute("SUM(total)", string.Empty));
+            }
+            else
+            {
+                tCompras = 0f;
+            }
+
+            total = tVentas - tCompras;
 
             dataGridView_Sales.DataSource = ventas;
-            tBox_tVentas.Text = tVentas.ToString();
+            dataGridView_Buys.DataSource = compras;
+            tBox_tVentas.Text = tVentas.ToString("#.00");
+            tBox_tCompras.Text = tCompras.ToString("#.00");
+            tBox_total.Text = total.ToString("#.00");
+
+            MessageBox.Show("Se ha cargado la información");
         }
 
         private void dataGridView_Sales_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -47,6 +68,14 @@ namespace SisVentas.Presentacion
         private void button_Exit_MouseClick(object sender, MouseEventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView_Buys_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int idcompra = (int)dataGridView_Sales.Rows[e.RowIndex].Cells[0].Value;
+            Frm_Details detalles = new Frm_Details(idcompra, false);
+
+            detalles.ShowDialog();
         }
     }
 }

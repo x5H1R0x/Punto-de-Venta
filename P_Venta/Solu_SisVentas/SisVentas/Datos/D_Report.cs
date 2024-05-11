@@ -94,7 +94,31 @@ namespace SisVentas.Datos
                 conn = Conexion.getInstancia().CrearConexion();
                 MySqlCommand command = new MySqlCommand("detalle_Compra", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("idven", MySqlDbType.Int32).Value = id;
+                command.Parameters.Add("idcom", MySqlDbType.Int32).Value = id;
+                conn.Open();
+                reader = command.ExecuteReader();
+                dataTable.Load(reader);
+                reader.Close();
+                conn.Close();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable getInventario(int minInv)
+        {
+            MySqlDataReader reader;
+            MySqlConnection conn = new MySqlConnection();
+            DataTable dataTable = new DataTable();
+            try
+            {
+                conn = Conexion.getInstancia().CrearConexion();
+                MySqlCommand command = new MySqlCommand("get_detalle_Inventario", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("minInv", MySqlDbType.Int32).Value = minInv;
                 conn.Open();
                 reader = command.ExecuteReader();
                 dataTable.Load(reader);

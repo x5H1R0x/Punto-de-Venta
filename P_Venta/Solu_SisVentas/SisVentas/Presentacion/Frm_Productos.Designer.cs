@@ -40,12 +40,15 @@
             this.lbProductos = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTrabajo = new System.Windows.Forms.Panel();
+            this.txtCodigoManu = new System.Windows.Forms.TextBox();
+            this.nuVenta = new System.Windows.Forms.NumericUpDown();
+            this.nuCosto = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCodigoManu = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescripcionPr = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbFamiProdu = new System.Windows.Forms.ComboBox();
+            this.cmbFamiPr = new System.Windows.Forms.ComboBox();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.txtBusquedaPr = new System.Windows.Forms.TextBox();
@@ -57,21 +60,20 @@
             this.btnGuardarProdu = new System.Windows.Forms.Button();
             this.btnCancelarProdu = new System.Windows.Forms.Button();
             this.lbFamiliaProd = new System.Windows.Forms.Label();
-            this.txtNombreProdu = new System.Windows.Forms.TextBox();
+            this.txtNombrePr = new System.Windows.Forms.TextBox();
             this.lbNombreus = new System.Windows.Forms.Label();
             this.lbPrecioVenta = new System.Windows.Forms.Label();
             this.lbPrecioCosto = new System.Windows.Forms.Label();
-            this.nuCosto = new System.Windows.Forms.NumericUpDown();
-            this.nuVenta = new System.Windows.Forms.NumericUpDown();
-            this.nuDescuento = new System.Windows.Forms.NumericUpDown();
+            this.cmbProvProdu = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbProv = new System.Windows.Forms.Label();
             this.pnlTareas.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTrabajo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuDescuento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuCosto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTareas
@@ -84,7 +86,7 @@
             this.pnlTareas.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlTareas.Location = new System.Drawing.Point(659, 0);
             this.pnlTareas.Name = "pnlTareas";
-            this.pnlTareas.Size = new System.Drawing.Size(200, 518);
+            this.pnlTareas.Size = new System.Drawing.Size(200, 551);
             this.pnlTareas.TabIndex = 8;
             // 
             // btnMenuPrincipal
@@ -98,7 +100,7 @@
             this.btnMenuPrincipal.TabIndex = 3;
             this.btnMenuPrincipal.Text = "Menu Principal";
             this.btnMenuPrincipal.UseVisualStyleBackColor = false;
-            this.btnMenuPrincipal.Click += new System.EventHandler(this.button1_Click);
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
             // btnEstadoProd
             // 
@@ -171,7 +173,6 @@
             this.lbProductos.Size = new System.Drawing.Size(146, 31);
             this.lbProductos.TabIndex = 1;
             this.lbProductos.Text = "Productos";
-            this.lbProductos.Click += new System.EventHandler(this.lbUsuarios_Click);
             // 
             // pictureBox1
             // 
@@ -186,15 +187,18 @@
             // pnlTrabajo
             // 
             this.pnlTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(216)))), ((int)(((byte)(232)))));
-            this.pnlTrabajo.Controls.Add(this.nuDescuento);
+            this.pnlTrabajo.Controls.Add(this.cmbProvProdu);
+            this.pnlTrabajo.Controls.Add(this.label8);
+            this.pnlTrabajo.Controls.Add(this.lbProv);
+            this.pnlTrabajo.Controls.Add(this.txtCodigoManu);
             this.pnlTrabajo.Controls.Add(this.nuVenta);
             this.pnlTrabajo.Controls.Add(this.nuCosto);
             this.pnlTrabajo.Controls.Add(this.label7);
-            this.pnlTrabajo.Controls.Add(this.label8);
+            this.pnlTrabajo.Controls.Add(this.lblCodigoManu);
             this.pnlTrabajo.Controls.Add(this.label5);
             this.pnlTrabajo.Controls.Add(this.txtDescripcionPr);
             this.pnlTrabajo.Controls.Add(this.label6);
-            this.pnlTrabajo.Controls.Add(this.cmbFamiProdu);
+            this.pnlTrabajo.Controls.Add(this.cmbFamiPr);
             this.pnlTrabajo.Controls.Add(this.btnBusqueda);
             this.pnlTrabajo.Controls.Add(this.dgvListado);
             this.pnlTrabajo.Controls.Add(this.txtBusquedaPr);
@@ -206,15 +210,49 @@
             this.pnlTrabajo.Controls.Add(this.btnGuardarProdu);
             this.pnlTrabajo.Controls.Add(this.btnCancelarProdu);
             this.pnlTrabajo.Controls.Add(this.lbFamiliaProd);
-            this.pnlTrabajo.Controls.Add(this.txtNombreProdu);
+            this.pnlTrabajo.Controls.Add(this.txtNombrePr);
             this.pnlTrabajo.Controls.Add(this.lbNombreus);
             this.pnlTrabajo.Controls.Add(this.lbPrecioVenta);
             this.pnlTrabajo.Controls.Add(this.lbPrecioCosto);
             this.pnlTrabajo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrabajo.Location = new System.Drawing.Point(0, 100);
             this.pnlTrabajo.Name = "pnlTrabajo";
-            this.pnlTrabajo.Size = new System.Drawing.Size(659, 418);
+            this.pnlTrabajo.Size = new System.Drawing.Size(659, 451);
             this.pnlTrabajo.TabIndex = 10;
+            // 
+            // txtCodigoManu
+            // 
+            this.txtCodigoManu.Location = new System.Drawing.Point(309, 95);
+            this.txtCodigoManu.MaxLength = 20;
+            this.txtCodigoManu.Name = "txtCodigoManu";
+            this.txtCodigoManu.Size = new System.Drawing.Size(216, 20);
+            this.txtCodigoManu.TabIndex = 32;
+            // 
+            // nuVenta
+            // 
+            this.nuVenta.DecimalPlaces = 2;
+            this.nuVenta.Location = new System.Drawing.Point(503, 35);
+            this.nuVenta.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nuVenta.Name = "nuVenta";
+            this.nuVenta.Size = new System.Drawing.Size(120, 20);
+            this.nuVenta.TabIndex = 30;
+            // 
+            // nuCosto
+            // 
+            this.nuCosto.DecimalPlaces = 2;
+            this.nuCosto.Location = new System.Drawing.Point(312, 39);
+            this.nuCosto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nuCosto.Name = "nuCosto";
+            this.nuCosto.Size = new System.Drawing.Size(120, 20);
+            this.nuCosto.TabIndex = 29;
             // 
             // label7
             // 
@@ -227,14 +265,14 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "*";
             // 
-            // label8
+            // lblCodigoManu
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(309, 75);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Precio Descuento";
+            this.lblCodigoManu.AutoSize = true;
+            this.lblCodigoManu.Location = new System.Drawing.Point(309, 75);
+            this.lblCodigoManu.Name = "lblCodigoManu";
+            this.lblCodigoManu.Size = new System.Drawing.Size(78, 13);
+            this.lblCodigoManu.TabIndex = 26;
+            this.lblCodigoManu.Text = "Codigo Manual";
             // 
             // label5
             // 
@@ -250,7 +288,7 @@
             // txtDescripcionPr
             // 
             this.txtDescripcionPr.Location = new System.Drawing.Point(40, 91);
-            this.txtDescripcionPr.MaxLength = 100;
+            this.txtDescripcionPr.MaxLength = 180;
             this.txtDescripcionPr.Name = "txtDescripcionPr";
             this.txtDescripcionPr.Size = new System.Drawing.Size(216, 20);
             this.txtDescripcionPr.TabIndex = 24;
@@ -264,13 +302,13 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Descripcion";
             // 
-            // cmbFamiProdu
+            // cmbFamiPr
             // 
-            this.cmbFamiProdu.FormattingEnabled = true;
-            this.cmbFamiProdu.Location = new System.Drawing.Point(40, 151);
-            this.cmbFamiProdu.Name = "cmbFamiProdu";
-            this.cmbFamiProdu.Size = new System.Drawing.Size(121, 21);
-            this.cmbFamiProdu.TabIndex = 22;
+            this.cmbFamiPr.FormattingEnabled = true;
+            this.cmbFamiPr.Location = new System.Drawing.Point(40, 151);
+            this.cmbFamiPr.Name = "cmbFamiPr";
+            this.cmbFamiPr.Size = new System.Drawing.Size(121, 21);
+            this.cmbFamiPr.TabIndex = 22;
             // 
             // btnBusqueda
             // 
@@ -297,7 +335,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListado.EnableHeadersVisualStyles = false;
-            this.dgvListado.Location = new System.Drawing.Point(25, 321);
+            this.dgvListado.Location = new System.Drawing.Point(3, 321);
             this.dgvListado.Name = "dgvListado";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
@@ -308,8 +346,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvListado.Size = new System.Drawing.Size(602, 115);
+            this.dgvListado.Size = new System.Drawing.Size(653, 115);
             this.dgvListado.TabIndex = 20;
+            this.dgvListado.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellEnter);
             // 
             // txtBusquedaPr
             // 
@@ -411,13 +450,13 @@
             this.lbFamiliaProd.TabIndex = 10;
             this.lbFamiliaProd.Text = "Familia Producto";
             // 
-            // txtNombreProdu
+            // txtNombrePr
             // 
-            this.txtNombreProdu.Location = new System.Drawing.Point(40, 36);
-            this.txtNombreProdu.MaxLength = 100;
-            this.txtNombreProdu.Name = "txtNombreProdu";
-            this.txtNombreProdu.Size = new System.Drawing.Size(216, 20);
-            this.txtNombreProdu.TabIndex = 9;
+            this.txtNombrePr.Location = new System.Drawing.Point(40, 36);
+            this.txtNombrePr.MaxLength = 45;
+            this.txtNombrePr.Name = "txtNombrePr";
+            this.txtNombrePr.Size = new System.Drawing.Size(216, 20);
+            this.txtNombrePr.TabIndex = 9;
             // 
             // lbNombreus
             // 
@@ -445,65 +484,56 @@
             this.lbPrecioCosto.TabIndex = 4;
             this.lbPrecioCosto.Text = "Precio Costo";
             // 
-            // nuCosto
+            // cmbProvProdu
             // 
-            this.nuCosto.DecimalPlaces = 2;
-            this.nuCosto.Location = new System.Drawing.Point(312, 39);
-            this.nuCosto.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nuCosto.Name = "nuCosto";
-            this.nuCosto.Size = new System.Drawing.Size(120, 20);
-            this.nuCosto.TabIndex = 29;
+            this.cmbProvProdu.FormattingEnabled = true;
+            this.cmbProvProdu.Location = new System.Drawing.Point(309, 151);
+            this.cmbProvProdu.Name = "cmbProvProdu";
+            this.cmbProvProdu.Size = new System.Drawing.Size(121, 21);
+            this.cmbProvProdu.TabIndex = 35;
             // 
-            // nuVenta
+            // label8
             // 
-            this.nuVenta.DecimalPlaces = 2;
-            this.nuVenta.Location = new System.Drawing.Point(503, 35);
-            this.nuVenta.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nuVenta.Name = "nuVenta";
-            this.nuVenta.Size = new System.Drawing.Size(120, 20);
-            this.nuVenta.TabIndex = 30;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(291, 135);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 17);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "*";
             // 
-            // nuDescuento
+            // lbProv
             // 
-            this.nuDescuento.DecimalPlaces = 2;
-            this.nuDescuento.Location = new System.Drawing.Point(312, 94);
-            this.nuDescuento.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nuDescuento.Name = "nuDescuento";
-            this.nuDescuento.Size = new System.Drawing.Size(120, 20);
-            this.nuDescuento.TabIndex = 31;
+            this.lbProv.AutoSize = true;
+            this.lbProv.Location = new System.Drawing.Point(309, 135);
+            this.lbProv.Name = "lbProv";
+            this.lbProv.Size = new System.Drawing.Size(56, 13);
+            this.lbProv.TabIndex = 33;
+            this.lbProv.Text = "Proveedor";
             // 
             // Frm_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 518);
+            this.ClientSize = new System.Drawing.Size(859, 551);
             this.Controls.Add(this.pnlTrabajo);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.pnlTareas);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Productos";
             this.Text = "Frm_Productos";
+            this.Load += new System.EventHandler(this.Frm_Productos_Load);
             this.pnlTareas.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTrabajo.ResumeLayout(false);
             this.pnlTrabajo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuCosto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuDescuento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuCosto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,7 +550,7 @@
         private System.Windows.Forms.Label lbProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTrabajo;
-        private System.Windows.Forms.ComboBox cmbFamiProdu;
+        private System.Windows.Forms.ComboBox cmbFamiPr;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.TextBox txtBusquedaPr;
@@ -532,7 +562,7 @@
         private System.Windows.Forms.Button btnGuardarProdu;
         private System.Windows.Forms.Button btnCancelarProdu;
         private System.Windows.Forms.Label lbFamiliaProd;
-        private System.Windows.Forms.TextBox txtNombreProdu;
+        private System.Windows.Forms.TextBox txtNombrePr;
         private System.Windows.Forms.Label lbNombreus;
         private System.Windows.Forms.Label lbPrecioVenta;
         private System.Windows.Forms.Label lbPrecioCosto;
@@ -540,9 +570,12 @@
         private System.Windows.Forms.TextBox txtDescripcionPr;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCodigoManu;
         private System.Windows.Forms.NumericUpDown nuCosto;
-        private System.Windows.Forms.NumericUpDown nuDescuento;
         private System.Windows.Forms.NumericUpDown nuVenta;
+        private System.Windows.Forms.TextBox txtCodigoManu;
+        private System.Windows.Forms.ComboBox cmbProvProdu;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbProv;
     }
 }

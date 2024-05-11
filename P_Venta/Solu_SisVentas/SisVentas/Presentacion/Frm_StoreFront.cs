@@ -17,6 +17,7 @@ namespace SisVentas.Presentacion
         BindingList<E_SaleItem> venta;
         D_Store sqlItem = new D_Store();
         float total = 0;
+        public int idUser { get; set; }
 
 		public Frm_StoreFront()
         {
@@ -55,9 +56,15 @@ namespace SisVentas.Presentacion
                 item = sqlItem.getStoreItem(codigo);
             }
 
+            if (item.l_id == 0)
+            {
+                MessageBox.Show("No se encontro el producto");
+            }
+
             tBox_Id.Text = item.l_id.ToString();
+            tBox_Codigo.Text = item.l_codigo;
 			tBox_desc.Text = item.l_desc;
-			tBox_precio.Text = item.l_precio.ToString();
+			tBox_precio.Text = item.l_precio.ToString("#.00");
 			numUD_cantidad.Value = item.l_cantidad;
 
         }
@@ -98,23 +105,30 @@ namespace SisVentas.Presentacion
             tBox_Id.Text = "";
             tBox_Codigo.Text = "";
             tBox_desc.Text = "";
-            numUD_cantidad.Value = 0.0M;
+            numUD_cantidad.Value = 1M;
             tBox_precio.Text = "";
 
             total += (cant * precio);
             
             dataGridView_venta.Refresh();
-            tBox_SaleTotal.Text = total.ToString();
+            tBox_SaleTotal.Text = total.ToString("#.00");
 
         }
 
         private void button_Cerrar_venta_Click(object sender, EventArgs e)
         {
-            sqlItem.storeSaleData(venta, total);
-            venta.Clear();
-            total = 0;
-            dataGridView_venta.Refresh();
-            tBox_SaleTotal.Text = total.ToString();
+            if (venta.Count == 0)
+            {
+                MessageBox.Show("No hay productos en la venta");
+            }
+            else
+            {
+                sqlItem.storeSaleData(venta, total, idUser);
+                venta.Clear();
+                total = 0;
+                dataGridView_venta.Refresh();
+                tBox_SaleTotal.Text = total.ToString();
+            }
         }
 
         private void dataGridView_venta_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

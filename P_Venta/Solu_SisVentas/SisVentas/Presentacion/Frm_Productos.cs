@@ -21,33 +21,33 @@ namespace SisVentas.Presentacion
         public Frm_Productos()
         {
             InitializeComponent();
+            limpiar_texto();
         }
-
+        // Variables Producto
         #region
         int nCodigo_pr = 0;
         int nEstadoGuarda = 0;
         #endregion
-
-
+        // Metodos Producto
         #region "Metodos de Frm_productos"
         private void limpiar_texto()
         {
-            txtNombreProdu.Text = "";
+            txtNombrePr.Text = "";
             txtDescripcionPr.Text = "";
             nuCosto.Value = 0;
-            nuDescuento.Value = 0;
+            txtCodigoManu.Text = "";
             nuVenta.Value = 0;
-            cmbFamiProdu.Text = "";
+            cmbFamiPr.Text = "";
 
         }
         private void Estado_texto(bool lEstado)
         {
-            txtNombreProdu.Enabled = lEstado;
+            txtNombrePr.Enabled = lEstado;
             txtDescripcionPr.Enabled = lEstado;
             nuCosto.Enabled = lEstado;
-            nuDescuento.Enabled = lEstado;
+            txtCodigoManu.Enabled = lEstado;
             nuVenta.Enabled = lEstado;
-            cmbFamiProdu.Enabled = lEstado;
+            cmbFamiPr.Enabled = lEstado;
 
             txtBusquedaPr.Enabled = !lEstado;
             dgvListado.Enabled = !lEstado;
@@ -67,35 +67,39 @@ namespace SisVentas.Presentacion
         }
         private void Formato()
         {
-            dgvListado.Columns[0].Width = 50;
-            dgvListado.Columns[0].HeaderText = "Codigo";
-            dgvListado.Columns[1].Width = 50;
-            dgvListado.Columns[1].HeaderText = "Nombre";
-            dgvListado.Columns[2].Width = 180;
-            dgvListado.Columns[2].HeaderText = "Descripcion";
-            dgvListado.Columns[3].Width = 80;
-            dgvListado.Columns[3].HeaderText = "Costo";
-            dgvListado.Columns[4].Width = 80;
-            dgvListado.Columns[4].HeaderText = "Venta";
-            dgvListado.Columns[5].Width = 80;
-            dgvListado.Columns[5].HeaderText = "Descuento";
-            dgvListado.Columns[6].Width = 50;
-            dgvListado.Columns[6].HeaderText = "Activo";
+//
         }
-        private void Listado_Produ(string cTexto)
+        private void Listado_pr(string cTexto)
         {
-            D_Usuarios Datos = new D_Usuarios();
-            dgvListado.DataSource = Datos.Listado_us(cTexto);
-            this.Formato();
+            D_Productos Datos = new D_Productos();
+            DataTable tabla = Datos.Listado_pr(cTexto);
+
+            dgvListado.DataSource = tabla;
+            this.Formato(); // Llama al método de formato después de cargar los datos
         }
-        private void Listado_ru()
+
+        private void Listado_prov()
         {
             try
             {
-                D_Usuarios Datos = new D_Usuarios();
-                cmbFamiProdu.DataSource = Datos.Listado_ru();
-                cmbFamiProdu.ValueMember = "codigo_ru";
-                cmbFamiProdu.DisplayMember = "descripcion_ru";
+                D_Productos Datos = new D_Productos();
+                cmbProvProdu.DataSource = Datos.Listado_prov();
+                cmbProvProdu.ValueMember = "codigo_prov";
+                cmbProvProdu.DisplayMember = "nombre_prov";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        private void Listado_fa()
+        {
+            try
+            {
+                D_Productos Datos = new D_Productos();
+                cmbFamiPr.DataSource = Datos.Listado_fa();
+                cmbFamiPr.ValueMember = "codigo_fa";
+                cmbFamiPr.DisplayMember = "nombre_fa";
 
             }
             catch (Exception ex)
@@ -105,13 +109,15 @@ namespace SisVentas.Presentacion
         }
         private void Selecciona_item()
         {
-            if (dgvListado.CurrentRow != null && dgvListado.CurrentRow.Cells["codigo_pr"].Value != null)
+            if (dgvListado.CurrentRow != null &&
+                dgvListado.CurrentRow.Cells["codigo_pr"] != null &&
+                dgvListado.CurrentRow.Cells["codigo_pr"].Value != null)
             {
                 nCodigo_pr = Convert.ToInt32(dgvListado.CurrentRow.Cells["codigo_pr"].Value);
                 txtDescripcionPr.Text = dgvListado.CurrentRow.Cells["descripcion_pr"].Value.ToString();
                 nuCosto.Text = dgvListado.CurrentRow.Cells["pu_costo"].Value.ToString();
                 nuVenta.Text = dgvListado.CurrentRow.Cells["pu_venta"].Value.ToString();
-                nuDescuento.Text = dgvListado.CurrentRow.Cells["pu_descuento"].Value.ToString();
+                txtCodigoManu.Text = dgvListado.CurrentRow.Cells["codigo_manu"].Value.ToString();
             }
             else
             {
@@ -123,20 +129,8 @@ namespace SisVentas.Presentacion
         }
 
         #endregion
-        ///EndRegion
-        private void lbUsuarios_Click(object sender, EventArgs e)
-        {
-
-        }
-        // Crea listado de productos
-        private void Listado_pr(string cTexto)
-        {
-            D_Productos Datos = new D_Productos();
-            dgvListado.DataSource = Datos.Listado_pr(cTexto);
-            this.Formato();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        // Funciones de objetos en pantalla producto
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -196,36 +190,41 @@ namespace SisVentas.Presentacion
 
         private void btnGuardarProdu_Click(object sender, EventArgs e)
         {
-            // Validación de campos llenos
-            if (string.IsNullOrEmpty(txtDescripcionPr.Text) ||
-                nuCosto.Text == string.Empty ||
-                nuVenta.Text == string.Empty ||
-                nuDescuento.Text == string.Empty ||
-                cmbFamiProdu.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Ingrese toda la información necesaria (*) ",
-                                "Aviso del Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
-            }
-            else // Guardar información en Base de datos
-            {
-                string Rpta;
-                E_Productos oPro = new E_Productos();
-                oPro.Descripcion_pr = txtDescripcionPr.Text;
-                oPro.Pu_costo = Convert.ToDecimal(nuCosto.Value);
-                oPro.Pu_venta = Convert.ToDecimal(nuVenta.Value);
-                oPro.Pu_descuento = Convert.ToDecimal(nuDescuento.Value);
-                oPro.Codigo_fa = Convert.ToInt32(cmbFamiProdu.SelectedItem);
-
-                D_Productos Datos = new D_Productos();
-                Rpta = Datos.Guardar_pr(nEstadoGuarda, oPro);
-
-                // Verificar si se guardaron datos en la base de datos
-                if (Rpta != "")
+                // Validación de campos llenos
+                if (string.IsNullOrEmpty(txtDescripcionPr.Text) ||
+                    nuCosto.Text == string.Empty ||
+                    nuVenta.Text == string.Empty ||
+                    txtCodigoManu.Text == string.Empty ||
+                    cmbFamiPr.SelectedItem == null    ||
+                    cmbProvProdu.SelectedItem == null)
                 {
-                    bool esNumero = int.TryParse(Rpta, out int xCodigo);
-                    if (esNumero == true)
+                    MessageBox.Show("Ingrese toda la información necesaria (*) ",
+                                    "Aviso del Sistema",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                }
+                else // Guardar información en Base de datos
+                {
+                    string Rpta;
+                    E_Productos oPro = new E_Productos();
+                    oPro.nombre_pr = txtNombrePr.Text;
+                    oPro.descripcion_pr = txtDescripcionPr.Text;
+                    oPro.codigo_manu = txtCodigoManu.Text;
+                    oPro.pu_costo = Convert.ToDecimal(nuCosto.Value);
+                    oPro.pu_venta = Convert.ToDecimal(nuVenta.Value);
+                    oPro.codigo_prov = Convert.ToInt32((cmbFamiPr.SelectedItem as DataRowView)?.Row[0]);
+                    oPro.codigo_us = Convert.ToInt32(CodigoUs_pr);
+                    oPro.codigo_fa = Convert.ToInt32((cmbFamiPr.SelectedItem as DataRowView)?.Row[0]);
+
+
+                    D_Productos Datos = new D_Productos();
+                    // Llamar al procedimiento almacenado para guardar el producto
+                    Rpta = Datos.Guardar_pr(nEstadoGuarda, oPro);
+
+                    // Verificar si se guardaron datos en la base de datos
+                    if (Rpta == "OK")
                     {
                         nEstadoGuarda = 0;
                         nCodigo_pr = 0;
@@ -233,7 +232,7 @@ namespace SisVentas.Presentacion
                         this.Estado_botones_procesos(false);
                         this.Estados_botnes_principales(true);
                         this.Listado_pr("%");
-                        MessageBox.Show("Los Datos fueron guardados correctamente",
+                        MessageBox.Show("Los Datos fueron guardados correctamente.\n" + Rpta, // Rpta ahora contiene la cadena enviada al procedimiento
                                         "Aviso del sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
@@ -241,29 +240,31 @@ namespace SisVentas.Presentacion
                     else
                     {
                         // Mostrar un mensaje en caso de que no se guarden datos
-                        MessageBox.Show("No se pudo guardar la información en la base de datos",
+                        MessageBox.Show($"FRm...\nNo se pudo guardar la información en la base de datos. Detalles del error: {Rpta}",
                                         "Aviso del sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
                     }
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                // Construir el mensaje de error detallado
+                string errorMessage = $"Error al intentar guardar el producto:\n{ex.Message}\n\nDetalles del error:\n{ex.StackTrace}";
+
+                // Mostrar un mensaje detallado del error
+                MessageBox.Show(errorMessage,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
+                // Ofrecer la opción de copiar el error al portapapeles
+                if (MessageBox.Show("¿Desea copiar este mensaje de error al portapapeles?", "Copiar Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // Mostrar un mensaje en caso de que no se guarden datos
-                    MessageBox.Show("No se pudo guardar la información en la base de datos \nRpta Vacia",
-                                    "Aviso del sistema",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                    // Copiar el mensaje de error al portapapeles
+                    Clipboard.SetText(errorMessage);
                 }
             }
-        }
-
-
-        private void Frm_Productos_Load(object sender, EventArgs e)
-        {
-            //this.Listado_pr();
-            // Llenar combobox de usuarios
-
         }
 
         private void btnBusquedaPr_Click(object sender, EventArgs e)
@@ -273,8 +274,22 @@ namespace SisVentas.Presentacion
 
         private void dgvListadoPr_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            this.Selecciona_item();
+            if (dgvListado.CurrentRow != null)
+            {
+                this.Selecciona_item();
+            }
         }
 
+        private void Frm_Productos_Load(object sender, EventArgs e)
+        {
+            this.Listado_prov();
+            this.Listado_fa();
+            Listado_pr("%");
+        }
+
+        private void dgvListado_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item();
+        }
     }
 }

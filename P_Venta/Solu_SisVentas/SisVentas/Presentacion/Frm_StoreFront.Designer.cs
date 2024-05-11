@@ -88,7 +88,7 @@
             // 
             // tBox_Id
             // 
-            this.tBox_Id.Location = new System.Drawing.Point(6, 36);
+            this.tBox_Id.Location = new System.Drawing.Point(5, 79);
             this.tBox_Id.Name = "tBox_Id";
             this.tBox_Id.ReadOnly = true;
             this.tBox_Id.Size = new System.Drawing.Size(172, 20);
@@ -97,7 +97,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 20);
+            this.label6.Location = new System.Drawing.Point(4, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 10;
@@ -105,7 +105,7 @@
             // 
             // button_buscar
             // 
-            this.button_buscar.Location = new System.Drawing.Point(193, 80);
+            this.button_buscar.Location = new System.Drawing.Point(193, 36);
             this.button_buscar.Name = "button_buscar";
             this.button_buscar.Size = new System.Drawing.Size(75, 23);
             this.button_buscar.TabIndex = 9;
@@ -186,7 +186,7 @@
             // 
             // tBox_Codigo
             // 
-            this.tBox_Codigo.Location = new System.Drawing.Point(7, 80);
+            this.tBox_Codigo.Location = new System.Drawing.Point(6, 38);
             this.tBox_Codigo.Name = "tBox_Codigo";
             this.tBox_Codigo.Size = new System.Drawing.Size(171, 20);
             this.tBox_Codigo.TabIndex = 1;
@@ -194,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 63);
+            this.label1.Location = new System.Drawing.Point(4, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 0;
@@ -226,9 +226,9 @@
             // 
             // button_Cerrar_venta
             // 
-            this.button_Cerrar_venta.Location = new System.Drawing.Point(196, 69);
+            this.button_Cerrar_venta.Location = new System.Drawing.Point(168, 69);
             this.button_Cerrar_venta.Name = "button_Cerrar_venta";
-            this.button_Cerrar_venta.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar_venta.Size = new System.Drawing.Size(103, 23);
             this.button_Cerrar_venta.TabIndex = 2;
             this.button_Cerrar_venta.Text = "Cerrar venta";
             this.button_Cerrar_venta.UseVisualStyleBackColor = true;

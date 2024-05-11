@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTareas = new System.Windows.Forms.Panel();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
-            this.btnEstadoUs = new System.Windows.Forms.Button();
+            this.btnEstadoProv = new System.Windows.Forms.Button();
             this.btnActualizarProv = new System.Windows.Forms.Button();
             this.btnNuevoProv = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
@@ -40,25 +40,19 @@
             this.lbProveedores = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTrabajo = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDireccionProv = new System.Windows.Forms.TextBox();
             this.lbDireccion = new System.Windows.Forms.Label();
-            this.cmbRolus = new System.Windows.Forms.ComboBox();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.txtBusquedaus = new System.Windows.Forms.TextBox();
+            this.txtBusquedaProv = new System.Windows.Forms.TextBox();
             this.lbBusqueda = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ldObligatorio = new System.Windows.Forms.Label();
-            this.btnGuardarus = new System.Windows.Forms.Button();
-            this.btnCancelarus = new System.Windows.Forms.Button();
-            this.lbRolus = new System.Windows.Forms.Label();
-            this.txtNombreus = new System.Windows.Forms.TextBox();
+            this.btnGuardarProv = new System.Windows.Forms.Button();
+            this.btnCancelarProv = new System.Windows.Forms.Button();
+            this.txtNombreProv = new System.Windows.Forms.TextBox();
             this.lbNombreus = new System.Windows.Forms.Label();
-            this.txtPasswordus = new System.Windows.Forms.TextBox();
-            this.lbCorreoProv = new System.Windows.Forms.Label();
-            this.txtLoginus = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lbTel_Prov = new System.Windows.Forms.Label();
             this.pnlTareas.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
@@ -71,13 +65,13 @@
             // 
             this.pnlTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(81)))), ((int)(((byte)(232)))));
             this.pnlTareas.Controls.Add(this.btnMenuPrincipal);
-            this.pnlTareas.Controls.Add(this.btnEstadoUs);
+            this.pnlTareas.Controls.Add(this.btnEstadoProv);
             this.pnlTareas.Controls.Add(this.btnActualizarProv);
             this.pnlTareas.Controls.Add(this.btnNuevoProv);
             this.pnlTareas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTareas.Location = new System.Drawing.Point(682, 0);
+            this.pnlTareas.Location = new System.Drawing.Point(666, 0);
             this.pnlTareas.Name = "pnlTareas";
-            this.pnlTareas.Size = new System.Drawing.Size(200, 560);
+            this.pnlTareas.Size = new System.Drawing.Size(200, 521);
             this.pnlTareas.TabIndex = 1;
             // 
             // btnMenuPrincipal
@@ -93,17 +87,18 @@
             this.btnMenuPrincipal.UseVisualStyleBackColor = false;
             this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
-            // btnEstadoUs
+            // btnEstadoProv
             // 
-            this.btnEstadoUs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEstadoUs.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEstadoUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadoUs.Location = new System.Drawing.Point(26, 252);
-            this.btnEstadoUs.Name = "btnEstadoUs";
-            this.btnEstadoUs.Size = new System.Drawing.Size(162, 56);
-            this.btnEstadoUs.TabIndex = 2;
-            this.btnEstadoUs.Text = "Estado Proveedor";
-            this.btnEstadoUs.UseVisualStyleBackColor = false;
+            this.btnEstadoProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEstadoProv.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEstadoProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoProv.Location = new System.Drawing.Point(26, 252);
+            this.btnEstadoProv.Name = "btnEstadoProv";
+            this.btnEstadoProv.Size = new System.Drawing.Size(162, 56);
+            this.btnEstadoProv.TabIndex = 2;
+            this.btnEstadoProv.Text = "Estado Proveedor";
+            this.btnEstadoProv.UseVisualStyleBackColor = false;
+            this.btnEstadoProv.Click += new System.EventHandler(this.btnEstadoProv_Click);
             // 
             // btnActualizarProv
             // 
@@ -116,6 +111,7 @@
             this.btnActualizarProv.TabIndex = 1;
             this.btnActualizarProv.Text = "Actualizar Proveedor";
             this.btnActualizarProv.UseVisualStyleBackColor = false;
+            this.btnActualizarProv.Click += new System.EventHandler(this.btnActualizarProv_Click);
             // 
             // btnNuevoProv
             // 
@@ -128,6 +124,7 @@
             this.btnNuevoProv.TabIndex = 0;
             this.btnNuevoProv.Text = "Agregar Proveedor";
             this.btnNuevoProv.UseVisualStyleBackColor = false;
+            this.btnNuevoProv.Click += new System.EventHandler(this.btnNuevoProv_Click);
             // 
             // pnlTitulo
             // 
@@ -138,7 +135,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(682, 100);
+            this.pnlTitulo.Size = new System.Drawing.Size(666, 100);
             this.pnlTitulo.TabIndex = 2;
             // 
             // label2
@@ -175,39 +172,33 @@
             // pnlTrabajo
             // 
             this.pnlTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(216)))), ((int)(((byte)(232)))));
-            this.pnlTrabajo.Controls.Add(this.textBox1);
+            this.pnlTrabajo.Controls.Add(this.txtDireccionProv);
             this.pnlTrabajo.Controls.Add(this.lbDireccion);
-            this.pnlTrabajo.Controls.Add(this.cmbRolus);
             this.pnlTrabajo.Controls.Add(this.btnBusqueda);
             this.pnlTrabajo.Controls.Add(this.dgvListado);
-            this.pnlTrabajo.Controls.Add(this.txtBusquedaus);
+            this.pnlTrabajo.Controls.Add(this.txtBusquedaProv);
             this.pnlTrabajo.Controls.Add(this.lbBusqueda);
-            this.pnlTrabajo.Controls.Add(this.label4);
             this.pnlTrabajo.Controls.Add(this.label3);
             this.pnlTrabajo.Controls.Add(this.label1);
-            this.pnlTrabajo.Controls.Add(this.ldObligatorio);
-            this.pnlTrabajo.Controls.Add(this.btnGuardarus);
-            this.pnlTrabajo.Controls.Add(this.btnCancelarus);
-            this.pnlTrabajo.Controls.Add(this.lbRolus);
-            this.pnlTrabajo.Controls.Add(this.txtNombreus);
+            this.pnlTrabajo.Controls.Add(this.btnGuardarProv);
+            this.pnlTrabajo.Controls.Add(this.btnCancelarProv);
+            this.pnlTrabajo.Controls.Add(this.txtNombreProv);
             this.pnlTrabajo.Controls.Add(this.lbNombreus);
-            this.pnlTrabajo.Controls.Add(this.txtPasswordus);
-            this.pnlTrabajo.Controls.Add(this.lbCorreoProv);
-            this.pnlTrabajo.Controls.Add(this.txtLoginus);
+            this.pnlTrabajo.Controls.Add(this.txtTelefono);
             this.pnlTrabajo.Controls.Add(this.lbTel_Prov);
             this.pnlTrabajo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrabajo.Location = new System.Drawing.Point(0, 100);
             this.pnlTrabajo.Name = "pnlTrabajo";
-            this.pnlTrabajo.Size = new System.Drawing.Size(682, 460);
+            this.pnlTrabajo.Size = new System.Drawing.Size(666, 421);
             this.pnlTrabajo.TabIndex = 3;
             // 
-            // textBox1
+            // txtDireccionProv
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 74);
-            this.textBox1.MaxLength = 100;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 20);
-            this.textBox1.TabIndex = 24;
+            this.txtDireccionProv.Location = new System.Drawing.Point(25, 74);
+            this.txtDireccionProv.MaxLength = 100;
+            this.txtDireccionProv.Name = "txtDireccionProv";
+            this.txtDireccionProv.Size = new System.Drawing.Size(373, 20);
+            this.txtDireccionProv.TabIndex = 24;
             // 
             // lbDireccion
             // 
@@ -217,14 +208,6 @@
             this.lbDireccion.Size = new System.Drawing.Size(52, 13);
             this.lbDireccion.TabIndex = 23;
             this.lbDireccion.Text = "Direccion";
-            // 
-            // cmbRolus
-            // 
-            this.cmbRolus.FormattingEnabled = true;
-            this.cmbRolus.Location = new System.Drawing.Point(25, 167);
-            this.cmbRolus.Name = "cmbRolus";
-            this.cmbRolus.Size = new System.Drawing.Size(121, 21);
-            this.cmbRolus.TabIndex = 22;
             // 
             // btnBusqueda
             // 
@@ -237,41 +220,43 @@
             this.btnBusqueda.TabIndex = 21;
             this.btnBusqueda.Text = "Busqueda";
             this.btnBusqueda.UseVisualStyleBackColor = false;
+            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
             // 
             // dgvListado
             // 
             this.dgvListado.ColumnHeadersHeight = 40;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListado.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvListado.EnableHeadersVisualStyles = false;
             this.dgvListado.Location = new System.Drawing.Point(25, 321);
             this.dgvListado.Name = "dgvListado";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvListado.Size = new System.Drawing.Size(602, 115);
             this.dgvListado.TabIndex = 20;
+            this.dgvListado.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellEnter);
             // 
-            // txtBusquedaus
+            // txtBusquedaProv
             // 
-            this.txtBusquedaus.Location = new System.Drawing.Point(88, 284);
-            this.txtBusquedaus.MaxLength = 20;
-            this.txtBusquedaus.Name = "txtBusquedaus";
-            this.txtBusquedaus.Size = new System.Drawing.Size(313, 20);
-            this.txtBusquedaus.TabIndex = 19;
+            this.txtBusquedaProv.Location = new System.Drawing.Point(88, 284);
+            this.txtBusquedaProv.MaxLength = 20;
+            this.txtBusquedaProv.Name = "txtBusquedaProv";
+            this.txtBusquedaProv.Size = new System.Drawing.Size(313, 20);
+            this.txtBusquedaProv.TabIndex = 19;
             // 
             // lbBusqueda
             // 
@@ -281,17 +266,6 @@
             this.lbBusqueda.Size = new System.Drawing.Size(55, 13);
             this.lbBusqueda.TabIndex = 18;
             this.lbBusqueda.Text = "Busqueda";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(9, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "*";
             // 
             // label3
             // 
@@ -315,61 +289,43 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "*";
             // 
-            // ldObligatorio
+            // btnGuardarProv
             // 
-            this.ldObligatorio.AutoSize = true;
-            this.ldObligatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ldObligatorio.ForeColor = System.Drawing.Color.Red;
-            this.ldObligatorio.Location = new System.Drawing.Point(160, 101);
-            this.ldObligatorio.Name = "ldObligatorio";
-            this.ldObligatorio.Size = new System.Drawing.Size(14, 17);
-            this.ldObligatorio.TabIndex = 14;
-            this.ldObligatorio.Text = "*";
+            this.btnGuardarProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(235)))), ((int)(((byte)(58)))));
+            this.btnGuardarProv.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarProv.ForeColor = System.Drawing.Color.Snow;
+            this.btnGuardarProv.Location = new System.Drawing.Point(342, 200);
+            this.btnGuardarProv.Name = "btnGuardarProv";
+            this.btnGuardarProv.Size = new System.Drawing.Size(162, 42);
+            this.btnGuardarProv.TabIndex = 13;
+            this.btnGuardarProv.Text = "Guardar";
+            this.btnGuardarProv.UseVisualStyleBackColor = false;
+            this.btnGuardarProv.Visible = false;
+            this.btnGuardarProv.Click += new System.EventHandler(this.btnGuardarProv_Click);
             // 
-            // btnGuardarus
+            // btnCancelarProv
             // 
-            this.btnGuardarus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(235)))), ((int)(((byte)(58)))));
-            this.btnGuardarus.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGuardarus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarus.ForeColor = System.Drawing.Color.Snow;
-            this.btnGuardarus.Location = new System.Drawing.Point(342, 200);
-            this.btnGuardarus.Name = "btnGuardarus";
-            this.btnGuardarus.Size = new System.Drawing.Size(162, 42);
-            this.btnGuardarus.TabIndex = 13;
-            this.btnGuardarus.Text = "Guardar";
-            this.btnGuardarus.UseVisualStyleBackColor = false;
-            this.btnGuardarus.Visible = false;
+            this.btnCancelarProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(46)))), ((int)(((byte)(41)))));
+            this.btnCancelarProv.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnCancelarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarProv.ForeColor = System.Drawing.Color.Snow;
+            this.btnCancelarProv.Location = new System.Drawing.Point(131, 200);
+            this.btnCancelarProv.Name = "btnCancelarProv";
+            this.btnCancelarProv.Size = new System.Drawing.Size(162, 42);
+            this.btnCancelarProv.TabIndex = 12;
+            this.btnCancelarProv.Text = "Cancelar";
+            this.btnCancelarProv.UseVisualStyleBackColor = false;
+            this.btnCancelarProv.Visible = false;
+            this.btnCancelarProv.Click += new System.EventHandler(this.btnCancelarProv_Click);
             // 
-            // btnCancelarus
+            // txtNombreProv
             // 
-            this.btnCancelarus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(46)))), ((int)(((byte)(41)))));
-            this.btnCancelarus.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.btnCancelarus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarus.ForeColor = System.Drawing.Color.Snow;
-            this.btnCancelarus.Location = new System.Drawing.Point(131, 200);
-            this.btnCancelarus.Name = "btnCancelarus";
-            this.btnCancelarus.Size = new System.Drawing.Size(162, 42);
-            this.btnCancelarus.TabIndex = 12;
-            this.btnCancelarus.Text = "Cancelar";
-            this.btnCancelarus.UseVisualStyleBackColor = false;
-            this.btnCancelarus.Visible = false;
-            // 
-            // lbRolus
-            // 
-            this.lbRolus.AutoSize = true;
-            this.lbRolus.Location = new System.Drawing.Point(25, 151);
-            this.lbRolus.Name = "lbRolus";
-            this.lbRolus.Size = new System.Drawing.Size(62, 13);
-            this.lbRolus.TabIndex = 10;
-            this.lbRolus.Text = "Rol Usuario";
-            // 
-            // txtNombreus
-            // 
-            this.txtNombreus.Location = new System.Drawing.Point(25, 31);
-            this.txtNombreus.MaxLength = 100;
-            this.txtNombreus.Name = "txtNombreus";
-            this.txtNombreus.Size = new System.Drawing.Size(373, 20);
-            this.txtNombreus.TabIndex = 9;
+            this.txtNombreProv.Location = new System.Drawing.Point(25, 31);
+            this.txtNombreProv.MaxLength = 45;
+            this.txtNombreProv.Name = "txtNombreProv";
+            this.txtNombreProv.Size = new System.Drawing.Size(373, 20);
+            this.txtNombreProv.TabIndex = 9;
             // 
             // lbNombreus
             // 
@@ -380,30 +336,13 @@
             this.lbNombreus.TabIndex = 8;
             this.lbNombreus.Text = "Nombre";
             // 
-            // txtPasswordus
+            // txtTelefono
             // 
-            this.txtPasswordus.Location = new System.Drawing.Point(180, 117);
-            this.txtPasswordus.MaxLength = 20;
-            this.txtPasswordus.Name = "txtPasswordus";
-            this.txtPasswordus.PasswordChar = '*';
-            this.txtPasswordus.Size = new System.Drawing.Size(218, 20);
-            this.txtPasswordus.TabIndex = 7;
-            // 
-            // lbCorreoProv
-            // 
-            this.lbCorreoProv.Location = new System.Drawing.Point(177, 101);
-            this.lbCorreoProv.Name = "lbCorreoProv";
-            this.lbCorreoProv.Size = new System.Drawing.Size(60, 13);
-            this.lbCorreoProv.TabIndex = 6;
-            this.lbCorreoProv.Text = "Correo";
-            // 
-            // txtLoginus
-            // 
-            this.txtLoginus.Location = new System.Drawing.Point(25, 117);
-            this.txtLoginus.MaxLength = 20;
-            this.txtLoginus.Name = "txtLoginus";
-            this.txtLoginus.Size = new System.Drawing.Size(121, 20);
-            this.txtLoginus.TabIndex = 5;
+            this.txtTelefono.Location = new System.Drawing.Point(25, 117);
+            this.txtTelefono.MaxLength = 10;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefono.TabIndex = 5;
             // 
             // lbTel_Prov
             // 
@@ -418,11 +357,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(866, 521);
             this.Controls.Add(this.pnlTrabajo);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.pnlTareas);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Proveedores";
-            this.Size = new System.Drawing.Size(882, 560);
+            this.Load += new System.EventHandler(this.Frm_Proveedores_Load);
             this.pnlTareas.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -438,7 +380,7 @@
 
         private System.Windows.Forms.Panel pnlTareas;
         private System.Windows.Forms.Button btnMenuPrincipal;
-        private System.Windows.Forms.Button btnEstadoUs;
+        private System.Windows.Forms.Button btnEstadoProv;
         private System.Windows.Forms.Button btnActualizarProv;
         private System.Windows.Forms.Button btnNuevoProv;
         private System.Windows.Forms.Panel pnlTitulo;
@@ -446,25 +388,19 @@
         private System.Windows.Forms.Label lbProveedores;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTrabajo;
-        private System.Windows.Forms.ComboBox cmbRolus;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.DataGridView dgvListado;
-        private System.Windows.Forms.TextBox txtBusquedaus;
+        private System.Windows.Forms.TextBox txtBusquedaProv;
         private System.Windows.Forms.Label lbBusqueda;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label ldObligatorio;
-        private System.Windows.Forms.Button btnGuardarus;
-        private System.Windows.Forms.Button btnCancelarus;
-        private System.Windows.Forms.Label lbRolus;
-        private System.Windows.Forms.TextBox txtNombreus;
+        private System.Windows.Forms.Button btnGuardarProv;
+        private System.Windows.Forms.Button btnCancelarProv;
+        private System.Windows.Forms.TextBox txtNombreProv;
         private System.Windows.Forms.Label lbNombreus;
-        private System.Windows.Forms.TextBox txtPasswordus;
-        private System.Windows.Forms.Label lbCorreoProv;
-        private System.Windows.Forms.TextBox txtLoginus;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lbTel_Prov;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDireccionProv;
         private System.Windows.Forms.Label lbDireccion;
     }
 }

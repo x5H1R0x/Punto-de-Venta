@@ -8,15 +8,15 @@ namespace SisVentas.Entidades
 {
     internal class E_Productos
     {
-        public int Codigo_pr { get; set; }
-        public string Nombre_pr { get; set; }
-        public string Descripcion_pr { get; set; }
-        public int Codigo_fa { get; set; }
-        public decimal Pu_costo { get; set; }
-        public decimal Pu_venta { get; set; }
-        public decimal Pu_descuento { get; set; }
-        public int Codigo_us { get; set; }
-
-
+        public int codigo_pr { get; set; }
+        public string nombre_pr { get; set; }
+        public string descripcion_pr { get; set; }
+        public string codigo_manu { get; set; }
+        public decimal pu_costo { get; set; }
+        public decimal pu_venta { get; set; }
+        
+        public int codigo_prov {  get; set; }
+            public int codigo_us { get; set; }
+        public int codigo_fa { get; set; }
     }
 }
