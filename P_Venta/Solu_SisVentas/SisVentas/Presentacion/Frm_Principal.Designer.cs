@@ -33,28 +33,27 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnEmpresa = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Pnl_Titulo = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Pnl_Barraestado = new System.Windows.Forms.Panel();
             this.lbLoginus = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Pnl_Contenido = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnFamilia = new System.Windows.Forms.Button();
             this.btnProducto = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Inventario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Pnl_Titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Pnl_Barraestado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Pnl_Contenido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,7 +61,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Controls.Add(this.btnUsuarios);
-            this.panel1.Controls.Add(this.btnEmpresa);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(732, 0);
             this.panel1.Name = "panel1";
@@ -81,27 +79,13 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(23, 136);
+            this.btnUsuarios.Location = new System.Drawing.Point(23, 32);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(152, 53);
             this.btnUsuarios.TabIndex = 1;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnEmpresa
-            // 
-            this.btnEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpresa.ImageKey = "Empresa_1.png";
-            this.btnEmpresa.ImageList = this.imageList1;
-            this.btnEmpresa.Location = new System.Drawing.Point(23, 12);
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(152, 77);
-            this.btnEmpresa.TabIndex = 0;
-            this.btnEmpresa.Text = "Empresa";
-            this.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEmpresa.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -130,16 +114,6 @@
             this.Pnl_Titulo.Size = new System.Drawing.Size(732, 104);
             this.Pnl_Titulo.TabIndex = 0;
             this.Pnl_Titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pnl_Titulo_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SisVentas.Properties.Resources._3594363;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -178,23 +152,13 @@
             this.lbLoginus.TabIndex = 8;
             this.lbLoginus.Text = "Login";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SisVentas.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(146, 95);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // Pnl_Contenido
             // 
             this.Pnl_Contenido.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Pnl_Contenido.Controls.Add(this.btn_Inventario);
             this.Pnl_Contenido.Controls.Add(this.btnReportes);
             this.Pnl_Contenido.Controls.Add(this.btnVentas);
             this.Pnl_Contenido.Controls.Add(this.btnCompras);
-            this.Pnl_Contenido.Controls.Add(this.btnCliente);
             this.Pnl_Contenido.Controls.Add(this.btnProveedor);
             this.Pnl_Contenido.Controls.Add(this.btnFamilia);
             this.Pnl_Contenido.Controls.Add(this.btnProducto);
@@ -210,100 +174,127 @@
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.ImageKey = "Reporte.png";
             this.btnReportes.ImageList = this.imageList1;
-            this.btnReportes.Location = new System.Drawing.Point(398, 203);
+            this.btnReportes.Location = new System.Drawing.Point(395, 192);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(110, 100);
+            this.btnReportes.Size = new System.Drawing.Size(133, 100);
             this.btnReportes.TabIndex = 7;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnReportes_MouseClick);
             // 
             // btnVentas
             // 
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVentas.ImageKey = "Ventas.png";
             this.btnVentas.ImageList = this.imageList1;
-            this.btnVentas.Location = new System.Drawing.Point(235, 203);
+            this.btnVentas.Location = new System.Drawing.Point(217, 192);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(110, 100);
+            this.btnVentas.Size = new System.Drawing.Size(135, 100);
             this.btnVentas.TabIndex = 6;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.button8_Click);
+            this.btnVentas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnVentas_MouseClick);
             // 
             // btnCompras
             // 
             this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompras.ImageKey = "Compras.png";
             this.btnCompras.ImageList = this.imageList1;
-            this.btnCompras.Location = new System.Drawing.Point(75, 203);
+            this.btnCompras.Location = new System.Drawing.Point(28, 192);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(110, 100);
+            this.btnCompras.Size = new System.Drawing.Size(150, 100);
             this.btnCompras.TabIndex = 5;
             this.btnCompras.Text = "Compras";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCompras.UseVisualStyleBackColor = true;
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.ImageKey = "Cliente.png";
-            this.btnCliente.ImageList = this.imageList1;
-            this.btnCliente.Location = new System.Drawing.Point(556, 62);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(110, 100);
-            this.btnCliente.TabIndex = 4;
-            this.btnCliente.Text = "Clientes";
-            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCompras.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCompras_MouseClick);
             // 
             // btnProveedor
             // 
             this.btnProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedor.ImageKey = "Proveedor.png";
             this.btnProveedor.ImageList = this.imageList1;
-            this.btnProveedor.Location = new System.Drawing.Point(398, 62);
+            this.btnProveedor.Location = new System.Drawing.Point(395, 51);
             this.btnProveedor.Name = "btnProveedor";
-            this.btnProveedor.Size = new System.Drawing.Size(110, 100);
+            this.btnProveedor.Size = new System.Drawing.Size(133, 100);
             this.btnProveedor.TabIndex = 3;
             this.btnProveedor.Text = "Proveedores";
             this.btnProveedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // btnFamilia
             // 
             this.btnFamilia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFamilia.ImageKey = "Familia.png";
             this.btnFamilia.ImageList = this.imageList1;
-            this.btnFamilia.Location = new System.Drawing.Point(235, 62);
+            this.btnFamilia.Location = new System.Drawing.Point(217, 51);
             this.btnFamilia.Name = "btnFamilia";
-            this.btnFamilia.Size = new System.Drawing.Size(110, 100);
+            this.btnFamilia.Size = new System.Drawing.Size(135, 100);
             this.btnFamilia.TabIndex = 2;
             this.btnFamilia.Text = "Familia Productos";
             this.btnFamilia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFamilia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFamilia.UseVisualStyleBackColor = true;
+            this.btnFamilia.Click += new System.EventHandler(this.btnFamilia_Click);
             // 
             // btnProducto
             // 
             this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducto.ImageKey = "Producto.png";
             this.btnProducto.ImageList = this.imageList1;
-            this.btnProducto.Location = new System.Drawing.Point(75, 62);
+            this.btnProducto.Location = new System.Drawing.Point(28, 51);
             this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(110, 100);
+            this.btnProducto.Size = new System.Drawing.Size(150, 100);
             this.btnProducto.TabIndex = 1;
             this.btnProducto.Text = "Productos";
             this.btnProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProducto.UseVisualStyleBackColor = true;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SisVentas.Properties.Resources.User;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(146, 95);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SisVentas.Properties.Resources._3594363;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_Inventario
+            // 
+            this.btn_Inventario.BackgroundImage = global::SisVentas.Properties.Resources.inventario;
+            this.btn_Inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Inventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Inventario.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Inventario.ImageKey = "(none)";
+            this.btn_Inventario.Location = new System.Drawing.Point(588, 106);
+            this.btn_Inventario.Name = "btn_Inventario";
+            this.btn_Inventario.Size = new System.Drawing.Size(97, 129);
+            this.btn_Inventario.TabIndex = 8;
+            this.btn_Inventario.Text = "Inventario";
+            this.btn_Inventario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Inventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_Inventario.UseVisualStyleBackColor = true;
+            this.btn_Inventario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_Inventario_MouseClick);
             // 
             // Frm_Principal
             // 
@@ -324,11 +315,11 @@
             this.panel1.ResumeLayout(false);
             this.Pnl_Titulo.ResumeLayout(false);
             this.Pnl_Titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Pnl_Barraestado.ResumeLayout(false);
             this.Pnl_Barraestado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Pnl_Contenido.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,12 +329,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Pnl_Barraestado;
         private System.Windows.Forms.Panel Pnl_Contenido;
-        private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnFamilia;
         private System.Windows.Forms.Button btnProducto;
@@ -354,5 +343,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btn_Inventario;
     }
 }

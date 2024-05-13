@@ -59,6 +59,7 @@
             this.dataGridView_Buys.Name = "dataGridView_Buys";
             this.dataGridView_Buys.Size = new System.Drawing.Size(313, 401);
             this.dataGridView_Buys.TabIndex = 0;
+            this.dataGridView_Buys.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_Buys_RowHeaderMouseDoubleClick);
             // 
             // dtp_desde
             // 

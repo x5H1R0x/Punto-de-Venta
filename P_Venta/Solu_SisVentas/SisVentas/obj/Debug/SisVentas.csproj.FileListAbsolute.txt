@@ -52,3 +52,8 @@ C:\Users\darks\source\repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\
 C:\Users\darks\source\repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.pdb
 C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_SalesReport.resources
 C:\Users\darks\source\repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Details.resources
+C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Familias.resources
+C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Productos.resources
+C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Proveedores.resources
+C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Compra.resources
+C:\Users\darks\Source\Repos\Punto-de-Venta\P_Venta\Solu_SisVentas\SisVentas\obj\Debug\SisVentas.Presentacion.Frm_Inventario.resources

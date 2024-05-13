@@ -25,7 +25,7 @@ namespace SisVentas.Presentacion
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-
+        // Metodos Logout
         #region "Metodos LogOut"
         private void Logout(object sender, FormClosedEventArgs e)
         {
@@ -33,11 +33,18 @@ namespace SisVentas.Presentacion
             this.txtPasswordus.Text = string.Empty;
             this.txtLoginus.Select();
         }
-
-
         #endregion
 
+        // Metodo para el control de datos
+        #region "Control de credenciales"
+        private void limpiar_texto()
+        {
+            txtLoginus.Text = string.Empty;
+            txtPasswordus.Text = string.Empty;  
+        }
+        #endregion
 
+        // Estilo para el control del Titulo
         #region "Estilo para el control del Titulo"
         //Drag Form
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
@@ -45,10 +52,10 @@ namespace SisVentas.Presentacion
 
         [DllImport("user32.Dll", EntryPoint = "SendMenssage")]
         private extern static void SendMenssage(System.IntPtr Hand, int wMsg, int wParam, int lParam);
-        #endregion
-
         // Declaración de la función externa SendMessage
         [DllImport("user32.dll")]
+        #endregion
+        // Metodos del formulario
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -74,13 +81,19 @@ namespace SisVentas.Presentacion
             Tablalogin = Datos.Login_us(txtLoginus.Text, txtPasswordus.Text);
             if (Tablalogin.Rows.Count > 0)
             {
+                // Ocultar la ventana actual (Frm_Login)
+                this.Hide();
+                limpiar_texto();
+                // Crear una instancia de la ventana principal (Frm_Principal)
                 Frm_Principal ofrm_Principal = new Frm_Principal();
                 ofrm_Principal.nCodigo_us = Convert.ToInt32(Tablalogin.Rows[0][0]);
                 ofrm_Principal.cLogin_us = Convert.ToString(Tablalogin.Rows[0][1]);
                 ofrm_Principal.cNombre_us = Convert.ToString(Tablalogin.Rows[0][2]);
                 ofrm_Principal.cDescripcion_ru = Convert.ToString(Tablalogin.Rows[0][3]);
                 ofrm_Principal.nCodigo_ru = Convert.ToInt32(Tablalogin.Rows[0][4]);
-                ofrm_Principal.FormClosed += Logout;
+                ofrm_Principal.FormClosed += (sender2, e2) => { this.Show(); };
+
+                // Mostrar la ventana principal (Frm_Principal)
                 ofrm_Principal.Show();
             }
             else

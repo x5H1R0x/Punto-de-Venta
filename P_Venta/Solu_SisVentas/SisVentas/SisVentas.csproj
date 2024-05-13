@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\D_Familias.cs" />
     <Compile Include="Datos\D_Productos.cs" />
+    <Compile Include="Datos\D_Proveedores.cs" />
     <Compile Include="Datos\D_Report.cs" />
     <Compile Include="Datos\D_Store.cs" />
     <Compile Include="Datos\D_Usuarios.cs" />
@@ -59,6 +61,12 @@
     <Compile Include="Entidades\E_Proveedores.cs" />
     <Compile Include="Entidades\E_Usuarios.cs" />
     <Compile Include="Entidades\E_SaleItem.cs" />
+    <Compile Include="Presentacion\Frm_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Frm_Compra.Designer.cs">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Frm_Details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +78,12 @@
     </Compile>
     <Compile Include="Presentacion\Frm_Familias.Designer.cs">
       <DependentUpon>Frm_Familias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Frm_Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Frm_Inventario.Designer.cs">
+      <DependentUpon>Frm_Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Frm_Login.cs">
       <SubType>Form</SubType>
@@ -90,7 +104,7 @@
       <DependentUpon>Frm_Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Frm_Proveedores.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
@@ -115,11 +129,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Frm_Compra.resx">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Details.resx">
       <DependentUpon>Frm_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Familias.resx">
       <DependentUpon>Frm_Familias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Frm_Inventario.resx">
+      <DependentUpon>Frm_Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -185,6 +205,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Familia_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Familia1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,17 +8,11 @@ namespace SisVentas.Entidades
 {
     internal class E_Proveedores
     {
-        public int Codigo_po { get; set; }
-        public string Nombre_po { get; set; }
-        public string Nrodocumento_po { get; set; }
-        public string Direccion_po { get; set; }
-        public string Telefono_po { get; set; }
-        public string Contacto_po { get; set; }
-        public string Correo_po { get; set; } 
-        public string Banco_po {  get; set; }
-        public string Nrocuenta_po {  get; set; }
-        public string Nrocuentainterbancaria {  get; set; }
-        public int Codigo_us { get; set; }
+        public int codigo_po { get; set; }
+        public string nombre_po { get; set; }
+        public string direccion_po { get; set; }
+        public string telefono_po { get; set; }
+        public int codigo_us { get; set; }
 
     }
 }

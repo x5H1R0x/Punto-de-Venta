@@ -17,14 +17,14 @@ namespace SisVentas.Presentacion
         public Frm_Usuarios()
         {
             InitializeComponent();
+            limpiar_texto();
         }
-
-        #region "Mis variables"
+        // Varibles Usuarios
+        #region "Variables Usuario"
         int nCodigo_us = 0;
         int nEstadoGuarda = 0;
         #endregion
-
-        /// Metodos Usuario
+        // Metodos Usuario
         #region "Metodos de Frm_Usuarios"
         private void limpiar_texto()
         {
@@ -109,13 +109,13 @@ namespace SisVentas.Presentacion
                 cmbRolus.Text = dgvListado.CurrentRow.Cells["descripcion_ru"].Value.ToString();
             }
         }
-        
         #endregion
-        ///EndRegion
+        // Funciones de objetos en pantalla usuario
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
         private void btnNuevoUs_Click(object sender, EventArgs e)
         {
             nEstadoGuarda = 1;//Nuevo registro
